@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Array Cardio 💪💪</title>
-  <link rel="icon" href="https://fav.farm/🔥" />
-</head>
-<body>
-  <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
-  <script>
-    // ## Array Cardio Day 2
+  <head>
+    <meta charset="UTF-8" />
+    <title>Array Cardio 💪💪</title>
+    <link rel="icon" href="https://fav.farm/🔥" />
+  </head>
+  <body>
+    <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
+    <script>
+      // ## Array Cardio Day 2
 
-    const people = [
-      { name: 'Wes', year: 1988 },
-      { name: 'Kait', year: 1986 },
-      { name: 'Irv', year: 1970 },
-      { name: 'Lux', year: 2015 }
-    ];
+      const people = [
+        { name: "Wes", year: 1988 },
+        { name: "Kait", year: 1986 },
+        { name: "Irv", year: 1970 },
+        { name: "Lux", year: 2015 },
+      ];
 
-    const comments = [
-      { text: 'Love this!', id: 523423 },
-      { text: 'Super good', id: 823423 },
-      { text: 'You are the best', id: 2039842 },
-      { text: 'Ramen is my fav food ever', id: 123523 },
-      { text: 'Nice Nice Nice!', id: 542328 }
-    ];
+      const comments = [
+        { text: "Love this!", id: 523423 },
+        { text: "Super good", id: 823423 },
+        { text: "You are the best", id: 2039842 },
+        { text: "Ramen is my fav food ever", id: 123523 },
+        { text: "Nice Nice Nice!", id: 542328 },
+      ];
 
-    // Some and Every Checks
-    // Array.prototype.some() // is at least one person 19 or older?
+      // Some and Every Checks
+      // Array.prototype.some() // is at least one person 19 or older?
       // const isAdult = people.some( (person) => {
       //   const currentYear = (new Date()).getFullYear();
       //   if (currentYear - person.year < 19) {
@@ -35,29 +35,29 @@
       //   return true
       // });
 
-      const isAdult = people.some( (person) => {
-        const currentYear = (new Date()).getFullYear();
+      const isAdult = people.some((person) => {
+        const currentYear = new Date().getFullYear();
         return currentYear - person.year >= 19;
-      })
+      });
       // console.table(isAdult);
-      
-    // Array.prototype.every() // is everyone 19 or older?
-    const allAdult = people.every( (person) => {
-        const currentYear = (new Date()).getFullYear();
+
+      // Array.prototype.every() // is everyone 19 or older?
+      const allAdult = people.every((person) => {
+        const currentYear = new Date().getFullYear();
         return currentYear - person.year >= 19;
-      })
+      });
       // console.table(allAdult);
 
-    // Array.prototype.find()
-    // Find is like filter, but instead returns just the one you are looking for
-    // find the comment with the ID of 823423
-    const comment = comments.find( (comment) =>  comment.id === 123523);
-    // console.log(comment);
+      // Array.prototype.find()
+      // Find is like filter, but instead returns just the one you are looking for
+      // find the comment with the ID of 823423
+      const comment = comments.find((comment) => comment.id === 123523);
+      // console.log(comment);
 
-    // Array.prototype.findIndex()
-    // Find the comment with this ID
-    // delete the comment with the ID of 823423
-      const index = comments.findIndex( (comment) => comment.id === 823423); 
+      // Array.prototype.findIndex()
+      // Find the comment with this ID
+      // delete the comment with the ID of 823423
+      const index = comments.findIndex((comment) => comment.id === 823423);
 
       // console.table(index);
       // comments.splice(index,1);
@@ -65,9 +65,69 @@
 
       const newComments = [
         ...comments.slice(0, index),
-        ...comments.slice(index + 1)
+        ...comments.slice(index + 1),
       ];
-      console.table(newComments);
-  </script>
-</body>
+      // console.table(newComments);
+
+      // const arr = [1, 2, 3, 4, 5];
+
+      // // const delElem = arr.splice(0, 2, "Hello", "Kchow");
+      // const delElem = arr.splice(3, 0, 10, 17);
+      // // console.log(delElem); // shows deleted elements
+
+      // // console.log(arr);
+
+      // const arr1 = ['t', 'e', 's', 't'];
+
+      // // alert(arr1.slice(0, 2));
+      // console.log(arr1);
+
+      // let arr = [1, 2]
+
+      // let arrayLike = {
+      //   0: "something",
+      //   1: "else",
+      //   [Symbol.isConcatSpreadable]: true,
+      //   length: 2
+      // };
+
+      // alert( arr.concat( arrayLike))
+
+      // ["Bilbo", "Gandalf", "Nazgul"].forEach((item, index, array) => {
+      //   alert(`${item} is at index ${index} in ${array}`);
+      // });
+
+        // let arr = [1, 0, "hi"];
+
+        // console.log( arr.indexOf(0) );
+        // console.log( arr.indexOf(null) );
+        // console.log( arr.includes(0) );
+
+        let users = [
+          {id: 1, name: "John"},
+          {id: 2, name: "Pete"},
+          {id: 3, name: "Mary"},
+          {id: 4, name: "John"}
+        ];
+        // let user = users.find(user => user.id == 1);
+        // let user = users.findIndex(user => user.id == 2);
+        // alert(users.findLastIndex(user => user.name == 'John'));
+
+        // const someUsers = users.filter( user => user.id < 4);
+        // console.log(someUsers)
+
+        let numbers = [3, 1, 4, 2];
+
+        numbers.sort( (a, b) => b - a);
+        console.log(numbers);
+
+
+
+
+
+
+
+
+    </script>
+  </body>
 </html>
