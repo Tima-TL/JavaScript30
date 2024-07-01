@@ -60,6 +60,11 @@
 
     // 5. Sort the inventors by years lived
     const longLived = inventors.sort( (a, b) => {
+      // console.log(`A: ${a.passed}`)
+      // console.log(`A: ${a.year}`)
+      // console.log(`A: ${b.passed}`)
+      // console.log(`B: ${b.year}`)
+
       const lastGuy = a.passed - a.year;
       const nextGuy = b.passed - b.year;
       return lastGuy > nextGuy ? -1 : 1;
@@ -96,7 +101,61 @@
     },
      {}
      );
-    console.table(transport);
+    // console.table(transport);
+
+    let items = [
+      { name: "Book", price: 100},
+      { name: "Pan", price: 200},
+      { name: "Pants", price: 150},
+      { name: "Shirt", price: 300}
+    ];
+
+    // const totalPrice = items.reduce( (total, item) => {
+    //     console.log(`Total: ${total}`)
+    //     console.log(`Item: ${item.price}`)
+      
+    //     return total + item.price
+    //   }, 0);
+      
+      // console.log(totalPrice);
+      const persons = [
+        { name: "Tim", age: 21},
+        { name: "Bob", age: 33},
+        { name: "Gabe", age: 67},
+        { name: "Genghis", age: 33},
+      ]
+
+    const result = persons.reduce((groupedPeople, person) => {
+      const age = person.age
+      if (groupedPeople[age] == null ) groupedPeople[age] = []
+      groupedPeople[age].push(person)
+      return groupedPeople
+    },
+    {}
+    );
+      // console.table(result);
+
+      const numbers = [13, 2, 5];
+
+      const sumNum = numbers.reduce( (sum, number) => {
+        return sum + number;
+      }, 0);
+
+      // console.log(sumNum);
+
+      const mashinalar = ['hatch', 'sedan', 'hatch', 'suv', 'lorry'];
+
+      const groupMashina = mashinalar.reduce( (group, mashina) => {
+        if (!group[mashina]) {
+          group[mashina] = 0;
+        }
+        group[mashina]++;
+        return group;
+      },
+      {}
+    );
+      // console.table(groupMashina)
+
   </script>
 </body>
 </html>
