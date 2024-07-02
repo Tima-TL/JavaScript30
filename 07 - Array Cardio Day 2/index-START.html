@@ -1,133 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Array Cardio 💪💪</title>
-    <link rel="icon" href="https://fav.farm/🔥" />
-  </head>
-  <body>
-    <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
-    <script>
-      // ## Array Cardio Day 2
 
-      const people = [
-        { name: "Wes", year: 1988 },
-        { name: "Kait", year: 1986 },
-        { name: "Irv", year: 1970 },
-        { name: "Lux", year: 2015 },
-      ];
+<head>
+  <meta charset="UTF-8" />
+  <title>Array Cardio 💪💪</title>
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
 
-      const comments = [
-        { text: "Love this!", id: 523423 },
-        { text: "Super good", id: 823423 },
-        { text: "You are the best", id: 2039842 },
-        { text: "Ramen is my fav food ever", id: 123523 },
-        { text: "Nice Nice Nice!", id: 542328 },
-      ];
+<body>
+  <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
+  <script>
+    // ## Array Cardio Day 2
 
-      // Some and Every Checks
-      // Array.prototype.some() // is at least one person 19 or older?
-      // const isAdult = people.some( (person) => {
-      //   const currentYear = (new Date()).getFullYear();
-      //   if (currentYear - person.year < 19) {
-      //     return false
-      //   }
-      //   return true
-      // });
+    // const people = [
+    //   { name: "Wes", year: 1988 },
+    //   { name: "Kait", year: 1986 },
+    //   { name: "Irv", year: 1970 },
+    //   { name: "Lux", year: 2015 },
+    // ];
 
-      const isAdult = people.some((person) => {
-        const currentYear = new Date().getFullYear();
-        return currentYear - person.year >= 19;
-      });
-      // console.table(isAdult);
+    // const comments = [
+    //   { text: "Love this!", id: 523423 },
+    //   { text: "Super good", id: 823423 },
+    //   { text: "You are the best", id: 2039842 },
+    //   { text: "Ramen is my fav food ever", id: 123523 },
+    //   { text: "Nice Nice Nice!", id: 542328 },
+    // ];
 
-      // Array.prototype.every() // is everyone 19 or older?
-      const allAdult = people.every((person) => {
-        const currentYear = new Date().getFullYear();
-        return currentYear - person.year >= 19;
-      });
-      // console.table(allAdult);
+    // Some and Every Checks
+    // Array.prototype.some() // is at least one person 19 or older?
+    // const isAdult = people.some( (person) => {
+    //   const currentYear = (new Date()).getFullYear();
+    //   if (currentYear - person.year < 19) {
+    //     return false
+    //   }
+    //   return true
+    // });
 
-      // Array.prototype.find()
-      // Find is like filter, but instead returns just the one you are looking for
-      // find the comment with the ID of 823423
-      const comment = comments.find((comment) => comment.id === 123523);
-      // console.log(comment);
+    // const isAdult = people.some((person) => {
+    //   const currentYear = new Date().getFullYear();
+    //   return currentYear - person.year >= 19;
+    // });
+    // console.table(isAdult);
 
-      // Array.prototype.findIndex()
-      // Find the comment with this ID
-      // delete the comment with the ID of 823423
-      const index = comments.findIndex((comment) => comment.id === 823423);
+    // Array.prototype.every() // is everyone 19 or older?
+    // const allAdult = people.every((person) => {
+    //   const currentYear = new Date().getFullYear();
+    //   return currentYear - person.year >= 19;
+    // });
+    // console.table(allAdult);
 
-      // console.table(index);
-      // comments.splice(index,1);
-      // console.table(comments);
+    // Array.prototype.find()
+    // Find is like filter, but instead returns just the one you are looking for
+    // find the comment with the ID of 823423
+    // const comment = comments.find((comment) => comment.id === 123523);
+    // console.log(comment);
 
-      const newComments = [
-        ...comments.slice(0, index),
-        ...comments.slice(index + 1),
-      ];
-      // console.table(newComments);
+    // Array.prototype.findIndex()
+    // Find the comment with this ID
+    // delete the comment with the ID of 823423
+    // const index = comments.findIndex((comment) => comment.id === 823423);
 
-      // const arr = [1, 2, 3, 4, 5];
+    // console.table(index);
+    // comments.splice(index,1);
+    // console.table(comments);
 
-      // // const delElem = arr.splice(0, 2, "Hello", "Kchow");
-      // const delElem = arr.splice(3, 0, 10, 17);
-      // // console.log(delElem); // shows deleted elements
+    // const newComments = [
+    //   ...comments.slice(0, index),
+    //   ...comments.slice(index + 1),
+    // ];
+    // console.table(newComments);
 
-      // // console.log(arr);
+    // const arr = [1, 2, 3, 4, 5];
 
-      // const arr1 = ['t', 'e', 's', 't'];
+    // // const delElem = arr.splice(0, 2, "Hello", "Kchow");
+    // const delElem = arr.splice(3, 0, 10, 17);
+    // // console.log(delElem); // shows deleted elements
 
-      // // alert(arr1.slice(0, 2));
-      // console.log(arr1);
+    // // console.log(arr);
 
-      // let arr = [1, 2]
+    // const arr1 = ['t', 'e', 's', 't'];
 
-      // let arrayLike = {
-      //   0: "something",
-      //   1: "else",
-      //   [Symbol.isConcatSpreadable]: true,
-      //   length: 2
-      // };
+    // // alert(arr1.slice(0, 2));
+    // console.log(arr1);
 
-      // alert( arr.concat( arrayLike))
+    // let arr = [1, 2]
 
-      // ["Bilbo", "Gandalf", "Nazgul"].forEach((item, index, array) => {
-      //   alert(`${item} is at index ${index} in ${array}`);
-      // });
+    // let arrayLike = {
+    //   0: "something",
+    //   1: "else",
+    //   [Symbol.isConcatSpreadable]: true,
+    //   length: 2
+    // };
 
-        // let arr = [1, 0, "hi"];
+    // alert( arr.concat( arrayLike))
 
-        // console.log( arr.indexOf(0) );
-        // console.log( arr.indexOf(null) );
-        // console.log( arr.includes(0) );
+    // ["Bilbo", "Gandalf", "Nazgul"].forEach((item, index, array) => {
+    //   alert(`${item} is at index ${index} in ${array}`);
+    // });
 
-        let users = [
-          {id: 1, name: "John"},
-          {id: 2, name: "Pete"},
-          {id: 3, name: "Mary"},
-          {id: 4, name: "John"}
-        ];
-        // let user = users.find(user => user.id == 1);
-        // let user = users.findIndex(user => user.id == 2);
-        // alert(users.findLastIndex(user => user.name == 'John'));
+    // let arr = [1, 0, "hi"];
 
-        // const someUsers = users.filter( user => user.id < 4);
-        // console.log(someUsers)
+    // console.log( arr.indexOf(0) );
+    // console.log( arr.indexOf(null) );
+    // console.log( arr.includes(0) );
 
-        let numbers = [3, 1, 4, 2];
+    // let users = [
+    //   { id: 1, name: "John" },
+    //   { id: 2, name: "Pete" },
+    //   { id: 3, name: "Mary" },
+    //   { id: 4, name: "John" }
+    // ];
+    // let user = users.find(user => user.id == 1);
+    // let user = users.findIndex(user => user.id == 2);
+    // alert(users.findLastIndex(user => user.name == 'John'));
 
-        numbers.sort( (a, b) => b - a);
-        console.log(numbers);
+    // const someUsers = users.filter( user => user.id < 4);
+    // console.log(someUsers)
+
+    // let numbers = [3, 1, 4, 2];
+
+    // numbers.sort((a, b) => b - a);
+    // console.log(numbers);
+
+    // let strings = ['Sant', 'Anerse', 'Zerlich', 'Abintz'];
+
+    // console.table( strings.sort( (a, b) => a.localeCompare(b) ) );
 
 
 
+    // let arr = [1, 2, 3, 4, 5];
+    // arr.reverse();
 
+    // alert(arr);
 
+    // let names = 'Bilbo, Gandalf, Nazgul';
 
+    // let arr = names.split(', ');
 
+    // for (let name of arr) {
+    //   console.log(`A message to ${name}.`);
+    // }
 
-    </script>
-  </body>
+    // let str = "test";
+
+    // alert(str.split('')); // t,e,s,t
+
+    // let arr = ['Bilbo', 'Gandalf', 'Nazgul'];
+
+    // let srt = arr.join(', ');
+
+    // console.log( srt );
+
+    function camelcase(str) {
+      return str
+            .split('-')
+            .map(
+              (word, index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1)
+          )
+          .join('');
+    }
+    console.log(camelcase('type-script'));
+
+  </script>
+</body>
+
 </html>
